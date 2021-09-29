@@ -4,7 +4,7 @@ users
 interfaces
 
 root {
-	'Persoonlijke gegevens': group {
+	'Persoonlijke Gegevens': group {
 		'Naam': text
 		'Geboortedatum': text
 		'Burgerservicenummer': text
