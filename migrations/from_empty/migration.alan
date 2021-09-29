@@ -1,4 +1,8 @@
 root = root as $ (
-	'Menu': collection = <! !> none
-	'Tables': collection = <! !> none
+	'Persoonlijke gegevens': group = (
+		'Naam': text = "❄☃❄"
+		'Geboortedatum': text = "❄☃❄"
+		'Burgerservicenummer': text = "❄☃❄"
+		'Telefoonnummer': text = "❄☃❄"
+	)
 )
