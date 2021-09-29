@@ -1,0 +1,4 @@
+root = root as $ (
+	'Menu': collection = <! !> none
+	'Tables': collection = <! !> none
+)
