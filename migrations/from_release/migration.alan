@@ -1,3 +1,8 @@
 root = root as $ (
-
+	'Persoonlijke gegevens': group = (
+		'Naam': text = "A Nonymous"
+		'Geboortedatum': text = "01-01-2000"
+		'Burgerservicenummer': text = "000000000"
+		'Telefoonnummer': text = "0600000000"
+	)
 )

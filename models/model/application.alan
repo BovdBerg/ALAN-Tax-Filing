@@ -4,6 +4,12 @@ users
 interfaces
 
 root {
+	'Persoonlijke gegevens': group {
+		'Naam': text
+		'Geboortedatum': text
+		'Burgerservicenummer': text
+		'Telefoonnummer': text
+	}
 }
 
 numerical-types
