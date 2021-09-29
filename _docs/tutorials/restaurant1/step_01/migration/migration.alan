@@ -1,0 +1,65 @@
+root = root as $ (
+	'Menu': collection = <! !> (
+		= (
+			'Item name': text = "Shrimp salad"
+			'Selling price': number = 4
+		)
+		= (
+			'Item name': text = "Tomato soup"
+			'Selling price': number = 5
+		)
+		= (
+			'Item name': text = "Ciabatta with tapenade"
+			'Selling price': number = 3
+		)
+		= (
+			'Item name': text = "Beef stew"
+			'Selling price': number = 18
+		)
+		= (
+			'Item name': text = "Grilled salmon"
+			'Selling price': number = 17
+		)
+		= (
+			'Item name': text = "Mashed potato with sauerkraut"
+			'Selling price': number = 14
+		)
+		= (
+			'Item name': text = "Chocolate mousse"
+			'Selling price': number = 5
+		)
+		= (
+			'Item name': text = "Vanilla ice cream"
+			'Selling price': number = 4
+		)
+		= (
+			'Item name': text = "Cherry pie"
+			'Selling price': number = 4
+		)
+		= (
+			'Item name': text = "Orange juice"
+			'Selling price': number = 5
+		)
+		= (
+			'Item name': text = "Spa rood"
+			'Selling price': number = 3
+		)
+		= (
+			'Item name': text = "Heineken pilsner"
+			'Selling price': number = 5
+		)
+		= (
+			'Item name': text = "Cappuccino"
+			'Selling price': number = 4
+		)
+		= (
+			'Item name': text = "Mint tea"
+			'Selling price': number = 3
+		)
+		= (
+			'Item name': text = "Mojito"
+			'Selling price': number = 6
+		)
+
+	)
+)
