@@ -1,8 +1,10 @@
 root = root as $ (
-	'Persoonlijke Gegevens': group = (
-		'Naam': text = "❄☃❄"
-		'Geboortedatum': text = "❄☃❄"
-		'Burgerservicenummer': text = "❄☃❄"
-		'Telefoonnummer': text = "❄☃❄"
+	'Persoonlijke Gegevens': collection = <! !> (
+	= (
+		'Naam': text = "R McDonalds"
+		'Geboortedatum': text = "01-01-2000"
+		'Burgerservicenummer': text = "000000000"
+		'Telefoonnummer': text = "0600000000"
+	)
 	)
 )
