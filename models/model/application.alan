@@ -4,7 +4,7 @@ users
 interfaces
 
 root {
-	'Persoonlijke Gegevens': group {
+	'Persoonlijke Gegevens': collection ['Naam'] {
 		'Naam': text
 		'Geboortedatum': text
 		'Burgerservicenummer': text
