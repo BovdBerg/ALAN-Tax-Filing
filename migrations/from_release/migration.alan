@@ -8,8 +8,10 @@ root = root as $ (
 	)
 
 	'Partner': group = (
-		'Hebt u in 2021 een echtgenoot?': stategroup = 'Nee' ( )
-		'Hebt u in 2021 huisgenoten?': stategroup = 'Nee' ( )
+		'Echtgenoten': collection = <! !> (
+		)
+		'Huisgenoten': collection = <! !> (
+		)
 	)
 
 	'Persoonlijke gegevens kinderen': group = (
@@ -41,10 +43,6 @@ root = root as $ (
 	)
 
 	'Overzicht belastingen en premies': group = (
-
-	)
-
-	'Ondertekenen en versturen': group = (
 
 	)
 )
