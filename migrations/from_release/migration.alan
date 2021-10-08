@@ -1,4 +1,8 @@
 root = root as $ (
+	'Introductie': group = (
+		// Geen introductie
+	)
+
 	'Persoonlijke gegevens': group = (
 		'Naam': text = "R McDonalds"
 		'Geboortedatum': text = "01-01-2000"
@@ -9,37 +13,78 @@ root = root as $ (
 
 	'Partner': group = (
 		'Echtgenoten': collection = <! !> (
+			// Geen echtgenoten
 		)
 		'Huisgenoten': collection = <! !> (
+			// Geen huisgenoten
 		)
+	)
+
+	'Vooraf ingevulde gegevens over 2019': group = (
+		// Geen vooraf ingevulde gegevens
 	)
 
 	'Persoonlijke gegevens kinderen': group = (
-
+		'Kinderen geboren na 2002': collection = <! !> (
+			// Geen kinderen
+		)
 	)
 
 	'Inkomsten': group = (
-
+		'Welke inkomsten hebt u in 2021?': group = (
+			'Inkomsten uit loondienst': stategroup = 'Ja' ( )
+			'Pensioen en andere uitkeringen': stategroup = 'Nee' ( )
+			'Winst uit onderneming': stategroup = 'Nee' ( )
+			'Inkomsten uit overig werk': stategroup = 'Nee' ( )
+			'Inkomsten uit het beschikbaar stellen van bezittingen aan een eigen bv of aan een onderneming van een fiscale partner': stategroup = 'Nee' ( )
+			'Ontvangen partneralimentatie': stategroup = 'Nee' ( )
+			'Teruggekregen bedragen en vergoedingen die u in een eerdere aangifte hebt afgetrokken': stategroup = 'Nee' ( )
+		)
 	)
 
 	'Woningen en andere onroerende zaken': group = (
-
+		'Hebt u onroerende zaken, zoals een eigen woning, een vakantiewoning, een verhuurd pand of een terrein?': stategroup = 'Nee' ( )
 	)
 
 	'Bankrekeningen en beleggingen': group = (
-
+		'Welke bezittingen hebt u?': group = (
+			'Bank- en spaarrekeningen': stategroup = 'Ja' ( )
+			'Aanmerkelijk belang (minimaal 5% van de aandelen, opties en winstbewijzen in een bv of nv)': stategroup = 'Nee' ( )
+			'Beleggingen': stategroup = 'Nee' ( )
+			'Kapitaalverzekeringen': stategroup = 'Nee' ( )
+			'Bouwdepots': stategroup = 'Nee' ( )
+			'Contant geld (meer dan €552)': stategroup = 'Nee' ( )
+			'Uitgeleend geld en andere vorderingen': stategroup = 'Nee' ( )
+			'Rechten op periodieke uitkeringen': stategroup = 'Nee' ( )
+			'Overige bezittingen': stategroup = 'Nee' ( )
+			'Zijn deze bezittingen op 1 januari 2021 in totaal meer waard dan €50.000?': stategroup = 'Nee' ( )
+		)
 	)
 
 	'Hypotheken en andere schulden': group = (
-
+		'Hebt u een restschuld voor een woning die u hebt verkocht?': stategroup = 'Nee' ( )
 	)
 
 	'Uitgaven': group = (
-
+		'Welke uitgaven hebt u in 2021?': group = (
+			'Uitgaven voor lijfrente, alleen bij een pensioentekort': stategroup = 'Nee' ( )
+			'Uitgaven voor de volgende inkomensvoorzieningen': stategroup = 'Nee' ( )
+			'Zorgkosten waarvoor u (gedeeltelijk) geen vergoeding krijgt': stategroup = 'Nee' ( )
+			'Giften': stategroup = 'Nee' ( )
+			'Uitgaven voor studie of opleiding': stategroup = 'Nee' ( )
+			'Uitgaven voor alimentatie aan een ex-partner en andere onderhoudsverplichtingen': stategroup = 'Nee' ( )
+			'Uitgaven voor tijdelijk verblijf thuis van een gehandicapte': stategroup = 'Nee' ( )
+			'Uitgaven die u vóór 2021 hebt gedaan. U hebt deze uitgaven eerder aangegeven maar kon ze niet (helemaal) aftrekken omdat uw inkomen te laag was.': stategroup = 'Nee' ( )
+		)
 	)
 
 	'Aanvullende vragen': group = (
-
+		'Welke onderwerpen gelden voor u in 2021?': group = (
+			'Eerdere voorlopige aanslag 2021': stategroup = 'Nee' ( )
+			'Te verrekenen verliezen uit werk en woning van 2012 tot en met 2020': stategroup = 'Nee' ( )
+			'Niet (volledig) verzekerd voor volksverzekeringen (AOW, Anw en Wlz) of Zorgverzekeringswet (Zvw)': stategroup = 'Nee' ( )
+			'Nettolijfrente of nettopensioen, afgekocht in 2020': stategroup = 'Nee' ( )
+		)
 	)
 
 	'Overzicht belastingen en premies': group = (

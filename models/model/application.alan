@@ -4,6 +4,10 @@ users
 interfaces
 
 root {
+	'Introductie': group {
+		//TODO?
+	}
+
 	'Persoonlijke gegevens': group {
 		'Naam': text
 		'Geboortedatum': text
@@ -204,37 +208,321 @@ root {
 		}
 	}
 
+	'Vooraf ingevulde gegevens over 2019': group {
+		//TODO?
+	}
+
 	'Persoonlijke gegevens kinderen': group {
-		//TODO
+		'Kinderen geboren na 2002': collection ['Naam'] {
+			'Naam': text
+			'Geboortedatum': text
+			'Staat het kind minstens 6 maanden ingeschreven op hetzelfde adres als u?': stategroup (
+				'Ja' {
+					// Einde vertakking kindergegevens.
+				}
+				'Nee' {
+					// Einde vertakking kindergegevens.
+				}
+			)
+		}
 	}
 
 	'Inkomsten': group {
-		//TODO
+		'Welke inkomsten hebt u in 2021?': group {
+			'Inkomsten uit loondienst': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking inkomsten.
+				}
+			)
+			'Pensioen en andere uitkeringen': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking inkomsten.
+				}
+			)
+			'Winst uit onderneming': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking inkomsten.
+				}
+			)
+			'Inkomsten uit overig werk': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking inkomsten.
+				}
+			)
+			'Inkomsten uit het beschikbaar stellen van bezittingen aan een eigen bv of aan een onderneming van een fiscale partner': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking inkomsten.
+				}
+			)
+			'Ontvangen partneralimentatie': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking inkomsten.
+				}
+			)
+			'Teruggekregen bedragen en vergoedingen die u in een eerdere aangifte hebt afgetrokken': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking inkomsten.
+				}
+			)
+		}
 	}
 
 	'Woningen en andere onroerende zaken': group {
-		//TODO
+		'Hebt u onroerende zaken, zoals een eigen woning, een vakantiewoning, een verhuurd pand of een terrein?': stategroup (
+			'Ja' {
+				//TODO
+			}
+			'Nee' {
+				// Einde vertakking woningen.
+			}
+		)
 	}
 
 	'Bankrekeningen en beleggingen': group {
-		//TODO
+		'Welke bezittingen hebt u?': group {
+			'Bank- en spaarrekeningen': stategroup ( // Automatisch ingevuld op Ja.
+				'Ja' {
+					// Einde vertakking bankrekeningen.
+				}
+				'Nee' {
+					// Einde vertakking bankrekeningen.
+				}
+			)
+			'Aanmerkelijk belang (minimaal 5% van de aandelen, opties en winstbewijzen in een bv of nv)': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking bankrekeningen.
+				}
+			)
+			'Beleggingen': stategroup (
+				'Ja' {
+					'Hebt u groene beleggingen?': stategroup (
+						'Ja' {
+							// Einde vertakking bankrekeningen.
+						}
+						'Nee' {
+							'Krijgt u dividend waarover dividendbelasting wordt ingehouden?': stategroup (
+								'Ja' {
+									// Einde vertakking bankrekeningen.
+								}
+								'Nee' {
+									// Einde vertakking bankrekeningen.
+								}
+							)
+						}
+					)
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking bankrekeningen.
+				}
+			)
+			'Kapitaalverzekeringen': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking bankrekeningen
+				}
+			)
+			'Bouwdepots': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking bankrekeningen
+				}
+			)
+			'Contant geld (meer dan €552)': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking bankrekeningen
+				}
+			)
+			'Uitgeleend geld en andere vorderingen': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking bankrekeningen
+				}
+			)
+			'Rechten op periodieke uitkeringen': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking bankrekeningen.
+				}
+			)
+			'Overige bezittingen': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking bankrekeningen
+				}
+			)
+			'Zijn deze bezittingen op 1 januari 2021 in totaal meer waard dan €50.000?': stategroup (
+				'Ja' {
+					// TODO: is dit einde vertakking of zorgt dit voor meer vragen?
+				}
+				'Nee' {
+					// Einde vertakking bankrekeningen
+				}
+			)
+		}
 	}
 
 	'Hypotheken en andere schulden': group {
-		//TODO
+		'Hebt u een restschuld voor een woning die u hebt verkocht?': stategroup (
+			'Ja' {
+				// TODO
+			}
+			'Nee' {
+				// Einde vertakking schulden.
+			}
+		)
 	}
 
 	'Uitgaven': group {
-		//TODO
+		'Welke uitgaven hebt u in 2021?': group {
+			'Uitgaven voor lijfrente, alleen bij een pensioentekort': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking uitgaven.
+				}
+			)
+			'Uitgaven voor de volgende inkomensvoorzieningen': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking uitgaven.
+				}
+			)
+			'Zorgkosten waarvoor u (gedeeltelijk) geen vergoeding krijgt': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking uitgaven.
+				}
+			)
+			'Giften': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking uitgaven.
+				}
+			)
+			'Uitgaven voor studie of opleiding': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking uitgaven.
+				}
+			)
+			'Uitgaven voor alimentatie aan een ex-partner en andere onderhoudsverplichtingen': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking uitgaven.
+				}
+			)
+			'Uitgaven voor tijdelijk verblijf thuis van een gehandicapte': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking uitgaven.
+				}
+			)
+			'Uitgaven die u vóór 2021 hebt gedaan. U hebt deze uitgaven eerder aangegeven maar kon ze niet (helemaal) aftrekken omdat uw inkomen te laag was.': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking uitgaven.
+				}
+			)
+		}
 	}
 
 	'Aanvullende vragen': group {
-		//TODO
+		'Welke onderwerpen gelden voor u in 2021?': group {
+			'Eerdere voorlopige aanslag 2021': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking aanvullend.
+				}
+			)
+			'Te verrekenen verliezen uit werk en woning van 2012 tot en met 2020': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking aanvullend.
+				}
+			)
+			'Niet (volledig) verzekerd voor volksverzekeringen (AOW, Anw en Wlz) of Zorgverzekeringswet (Zvw)': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking aanvullend.
+				}
+			)
+			'Nettolijfrente of nettopensioen, afgekocht in 2020': stategroup (
+				'Ja' {
+					//TODO
+				}
+				'Nee' {
+					// Einde vertakking aanvullend.
+				}
+			)
+		}
 	}
 
 	'Overzicht belastingen en premies': group {
-		//TODO
+		//TODO?
 	}
+
+	'Ondertekenen en versturen': command {
+		// Implementing this would be out of this project's scope.
+	} => ignore
 
 }
 
