@@ -1,8 +1,50 @@
 root = root as $ (
-	'Persoonlijke Gegevens': group = (
+	'Persoonlijke gegevens': group = (
 		'Naam': text = "R McDonalds"
 		'Geboortedatum': text = "01-01-2000"
-		'Burgerservicenummer': text = "000000000"
-		'Telefoonnummer': text = "0600000000"
+		'Burgerservicenummer': text = "111222333"
+		'Telefoonnummer': text = "0612345678"
+		'Nummer belastingconsulent': text = ""
+	)
+
+	'Partner': group = (
+		'Hebt u in 2021 een echtgenoot?': stategroup = 'Nee' ( )
+		'Hebt u in 2021 huisgenoten?': stategroup = 'Nee' ( )
+	)
+
+	'Persoonlijke gegevens kinderen': group = (
+
+	)
+
+	'Inkomsten': group = (
+
+	)
+
+	'Woningen en andere onroerende zaken': group = (
+
+	)
+
+	'Bankrekeningen en beleggingen': group = (
+
+	)
+
+	'Hypotheken en andere schulden': group = (
+
+	)
+
+	'Uitgaven': group = (
+
+	)
+
+	'Aanvullende vragen': group = (
+
+	)
+
+	'Overzicht belastingen en premies': group = (
+
+	)
+
+	'Ondertekenen en versturen': group = (
+
 	)
 )

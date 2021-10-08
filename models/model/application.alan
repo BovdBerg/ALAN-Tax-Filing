@@ -4,11 +4,253 @@ users
 interfaces
 
 root {
-	'Persoonlijke Gegevens': collection ['Naam'] {
+	'Persoonlijke gegevens': group {
 		'Naam': text
 		'Geboortedatum': text
 		'Burgerservicenummer': text
 		'Telefoonnummer': text
+		'Nummer belastingconsulent': text
+		//TODO: Aangifte jaar flexibel maken. 'Aangifte jaar': text
+	}
+
+	'Partner': group {
+		'Hebt u in 2021 een echtgenoot?': stategroup (
+			'Ja' {
+				'Echtgenoten': collection ['Naam echtgenoot'] {
+					'Naam echtgenoot': text
+					'Staat u heel 2021 ingeschreven op hetzelfde adres als deze echtgenoot?': stategroup (
+						'Ja' {
+							'Gegevens deze echtgenoot': group {
+								'Burgerservicenummer van deze echtgenoot': text
+								'Wil deze echtgenoot ook zijn/haar aangifte 2021 aanvragen of wijzigen met dit formulier?': stategroup (
+									'Ja' {
+										// Einde vertakking partner.
+									}
+									'Nee' {
+										// "Bij een aantal gezamenlijke inkomsten en aftrekbare uitgaven moet u ook het deel van deze echtgenoot invullen."
+									}
+								)
+							}
+						}
+						'Nee' {
+							'Staat u een deel van 2021 ingeschreven op hetzelfde adres als deze echtgenoot?': stategroup (
+								'Ja' {
+									'Vanaf wanneer in 2021 u ingeschreven staat/stond op hetzelfde adres als deze echtgenoot': text
+									'Tot wanneer in 2021 u ingeschreven staat/stond op hetzelfde adres als deze echtgenoot': text
+								}
+								'Nee' {
+									'Trouwdatum': text
+									'Woont deze echtgenoot heel 2021 buiten Nederland?': stategroup (
+										'Ja' {
+											'Is deze echtgenoot een kwalificerende buitenlandse belastingplichtige?': stategroup (
+												'Ja' {
+													// Einde vertakking partner.
+												}
+												'Nee' {
+													// "U bent geen fiscale partners met deze echtgenoot."
+												}
+											)
+										}
+										'Nee' {
+											// Einde vertakking partner.
+										}
+									)
+								}
+							)
+							'Is er een scheiding aangevraagd?': stategroup (
+								'Ja' {
+									'Datum van deze aanvraag': text
+								}
+								'Nee' {
+									'Is deze echtgenoot overleden in 2021?': stategroup (
+										'Ja' {
+											'Datum van overlijden deze echtgenoot': text
+										}
+										'Nee' {
+											// Einde vertakking partner.
+										}
+									)
+								}
+							)
+						}
+					)
+				}
+			}
+			'Nee' {
+			}
+		)
+		'Hebt u in 2021 huisgenoten?': stategroup (
+			'Ja' {
+				'Huisgenoten': collection ['Naam huisgenoot'] {
+					'Naam huisgenoot': text
+					'Staat u heel 2021 ingeschreven op hetzelfde adres als deze huisgenoot?': stategroup (
+						'Ja' {
+							// Einde vertakking partner.
+						}
+						'Nee' {
+							'Is deze huisgenoot overleden in 2021?': stategroup (
+								'Ja' {
+									'Datum van overlijden deze huisgenoot': text
+								}
+								'Nee' {
+									// Einde vertakking partner.
+								}
+							)
+							'Staat u een deel van 2021 ingeschreven op hetzelfde adres als deze huisgenoot?': stategroup (
+								'Ja' {
+									'Vanaf wanneer in 2021 u ingeschreven staat/stond op hetzelfde adres als deze huisgenoot': text
+									'Tot wanneer in 2021 u ingeschreven staat/stond op hetzelfde adres als deze huisgenoot': text
+								}
+								'Nee' {
+									'Woont u of deze huisgenoot in een verzorgings- of verpleeghuis?': stategroup (
+										'Ja' {
+											'Was u in 2020 fiscale partners?': stategroup (
+												'Ja' {
+													'Wilt u of deze Huisgenoot tijdens de periode van opname in het verzorgings- of verpleeghuis fiscale partners blijven?': stategroup (
+														'Ja' {
+															'Vanaf wanneer in 2021 woont u of deze huisgenoot in een verzorgings- of verpleeghuis?': text
+															'Tot wanneer in 2021 woont u of deze huisgenoot in een verzorgings- of verpleeghuis?': text
+														}
+														'Nee' {
+															// "U bent geen fiscale partners met deze huisgenoot."
+														}
+													)
+												}
+												'Nee' {
+													// "U bent geen fiscale partners met deze huisgenoot."
+												}
+											)
+										}
+										'Nee' {
+											// "U bent geen fiscale partners met deze huisgenoot."
+										}
+									)
+								}
+							)
+						}
+					)
+					'Hebt u een notarieel samenlevingscontract met deze huisgenoot?': stategroup (
+						'Ja' {
+							// Einde vertakking partner.
+						}
+						'Nee' {
+							'Hebt u een kind samen met deze huisgenoot?': stategroup (
+								'Ja' {
+									// Einde vertakking partner.
+								}
+								'Nee' {
+									'Heeft 1 van u een kind van de ander erkend?': stategroup (
+										'Ja' {
+											// Einde vertakking partner.
+										}
+										'Nee' {
+											'Bent u met deze huisgenoot partners in een pensioenregeling?': stategroup (
+												'Ja' {
+													// Einde vertakking partner.
+												}
+												'Nee' {
+													'Bent u samen met deze huisgenoot eigenaar van de woning die uw hoofdverblijf is?': stategroup (
+														'Ja' {
+															// Einde vertakking partner.
+														}
+														'Nee' {
+															'Staat een minderjarig kind van 1 van u ingeschreven op hetzelfde adres?': stategroup (
+																'Ja' {
+																	'Zijn u en deze huisgenoot allebei 18 jaar of ouder in de periode dat het minderjarige kind op hetzelfde adres staat ingeschreven?': stategroup (
+																		'Ja' {
+																			// Einde vertakking partner.
+																		}
+																		'Nee' {
+																			'Was deze huisgenoot in 2020 uw fiscale partner?': stategroup (
+																				'Ja' {
+																					// Einde vertakking partner.
+																				}
+																				'Nee' {
+																					// "U bent geen fiscale partners met deze huisgenoot."
+																				}
+																			)
+																		}
+																	)
+																}
+																'Nee' {
+																	'Was deze huisgenoot in 2020 uw fiscale partner?': stategroup (
+																		'Ja' {
+																			// Einde vertakking partner.
+																		}
+																		'Nee' {
+																			// "U bent geen fiscale partners met deze huisgenoot."
+																		}
+																	)
+																}
+															)
+														}
+													)
+												}
+											)
+										}
+									)
+								}
+							)
+						}
+					)
+					'Woont u of deze huisgenoot vanaf 21-01-2021 in een verzorgings- of verpleeghuis?': stategroup (
+						'Ja' {
+							'Wilt u of deze huisgenoot tijdens de periode van opname in het verzorgings- of verpleeghuis fiscale partners blijven?': stategroup (
+								'Ja' {
+									'Vanaf wanneer in 2021 u of deze huisgenoot in een verzorgings- of verpleeghuis woont/woonde': text
+									'Tot wanneer in 2021 u of deze huisgenoot in een verzorgings- of verpleeghuis woont/woonde': text
+								}
+								'Nee' {
+									// Einde vertakking partner.
+								}
+							)
+						}
+						'Nee' {
+							// Einde vertakking partner.
+						}
+					)
+				}
+			}
+			'Nee' {
+				// Einde vertakking partner.
+			}
+		)
+	}
+
+	'Persoonlijke gegevens kinderen': group {
+		//TODO
+	}
+
+	'Inkomsten': group {
+		//TODO
+	}
+
+	'Woningen en andere onroerende zaken': group {
+		//TODO
+	}
+
+	'Bankrekeningen en beleggingen': group {
+		//TODO
+	}
+
+	'Hypotheken en andere schulden': group {
+		//TODO
+	}
+
+	'Uitgaven': group {
+		//TODO
+	}
+
+	'Aanvullende vragen': group {
+		//TODO
+	}
+
+	'Overzicht belastingen en premies': group {
+		//TODO
+	}
+
+	'Ondertekenen en versturen': group {
+		//TODO
 	}
 }
 
